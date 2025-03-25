@@ -26,7 +26,7 @@ const contactBook = {
 };
   
   // Ange en grupp
-  let groupToShow;
+  let groupToShow = "familj";
   
 
 
@@ -37,12 +37,20 @@ function showContacts(contactBook, groupToShow) { // Rör ej denna kod
 
     // Loopar igenom alla kontakter och jämför grupp
    
-    return  // här ska sträng med namn och tekefonnummer visas i form av string interpolation
+    for (contact of contactBook.contacts) { 
+      if (contact.group === groupToShow) {
+    return  `Name: ${contact.name}, Telefon: ${contact.phone}`;// här ska sträng med namn och tekefonnummer visas i form av string interpolation
 
-
+  }
 }
-
+}
 
 // Rör ej denna kod
 showContacts(contactBook, groupToShow);
 module.exports = { showContacts };
+
+
+//info till läraren: Jag har problem med att köra skriptet på grund av exekveringspolicyn.
+////Har gjort alla ändringar och följt instruktionerna, men har alltså inte kunnat köra den i fullständig miljö ännu.
+//Saknar adminbehörighet på min dator vilket har försvårat processen med olika program.
+//Hoppas på att kunna lösa detta så snart jag kan. 
